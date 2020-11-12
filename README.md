@@ -27,6 +27,11 @@ Metadata that is being collected currently:
    - Auto Exposure coarse integration time.
    - Analog/digital current gains.
  - Number of USB_CAMERA_DATA_LEN_ERRORs occurred for a given round.
+ 
+ TODO:
+ - Add ret[0] value of each image returned from the process() function to metadata.
+ - Calculate and add camera sensor temperature estimate to metadata.
+ - Something else that needs to be added to metadata?
 
 Camera .cfg version 1.2:
 
@@ -38,3 +43,7 @@ values of registers 0x3030 (PLL_MULTIPLIER) and 0x300C (LINE_LENGTH_PCK) were mo
 Note that if the value of register 0x3030 is reduced too much, the camera "freezes" with error value of 65318 (0xFF26, USB_CAMERA_TIMEOUT_ERROR) -> to recover from
 this scenario, camera needed to be first powered off and the back on.
  - Values that were used at the time when this error occurred was 0x157C for register 0x300C and 0x000C for register 0x3030!
+
+With above setup, usb data errors have not been recorded during several program re-runs (except 1 usb data error that always occurs when program starts!). 
+Note that even when register value of 0x3030 is icreased and errors at some program re-run start to appear, images can still be processed at a relatively good pace
+due to the lower fps caused by the value in register 0x300C.
