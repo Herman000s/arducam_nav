@@ -26,7 +26,7 @@ Metadata that is being collected currently:
    - Auto Exposure mean value.
    - Auto Exposure coarse integration time.
    - Analog/digital current gains.
- - Number of USB_CAMERA_DATA_LEN_ERRORs occurred for a given round.
+ - Number of USB_CAMERA_DATA_LEN_ERRORs occurred for a given round -> need to change the name to some general usb error and read the corresponding error value.
  
  TODO:
  - Add ret[0] (pose estimate) value of each image returned from the process() function to metadata.
