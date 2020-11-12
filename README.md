@@ -29,9 +29,10 @@ Metadata that is being collected currently:
  - Number of USB_CAMERA_DATA_LEN_ERRORs occurred for a given round.
  
  TODO:
- - Add ret[0] value of each image returned from the process() function to metadata.
+ - Add ret[0] (pose estimate) value of each image returned from the process() function to metadata.
  - Calculate and add camera sensor temperature estimate to metadata.
  - Something else that needs to be added to metadata?
+ - To prevent possible filesystem/data corruptions, add secure shutdown procedure when program terminates!
 
 Camera .cfg version 1.2:
 
